@@ -1,0 +1,63 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} Ingresos {% endblock %} 
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="col-md-6">
+                    <a href="{% url 'transacciones:ingreso_form' %}" class="button btn btn-success">Nuevo Ingreso</a>
+                </div>
+              <div class="card">
+                <div class="card-header card-header-primary">
+                  <h4 class="card-title ">Listado de ingresos</h4>
+                  <p class="card-category"> Ingresos registrados</p>
+                </div>
+                <div class="card-body">
+                  <div class="table-responsive">
+                    <table class="table">
+                      <thead class=" text-primary">
+                        <th>
+                          ID
+                        </th>
+                        <th>
+                          Titulo
+                        </th>
+                        <th>
+                          Categoria
+                        </th>
+                        <th>
+                          Fecha
+                        </th>
+                        <th>
+                          Valor
+                        </th>
+                      </thead>
+                      <tbody>
+                          
+                          {% for transaccion in transacciones %}
+                            <tr>
+                              <td>{{ transaccion.id }}</td>
+                              <td>{{ transaccion.titulo }}</td>
+                              <td>{{ transaccion.categoria }}</td>
+                              <td>{{ transaccion.fecha }}</td>
+                              <td>$ {{ transaccion.valor }}</td>
+                            </tr>
+                          {% endfor %}
+                              
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}{% endblock javascripts %}

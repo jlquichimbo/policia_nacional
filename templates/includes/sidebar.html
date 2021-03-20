@@ -18,9 +18,22 @@
           <li class="nav-item {% if 'page-user' in segment %} active {% endif %}">
             <a class="nav-link" href="/page-user.html">
               <i class="material-icons">person</i>
-              <p>User Profile</p>
+              <p>Mi Perfil</p>
             </a>
           </li>
+          <li class="nav-item {% if 'ui-tables' in segment %} active {% endif %}">
+            <a class="nav-link" href="{% url 'transacciones:ingreso_list' %}">
+              <i class="material-icons">content_paste</i>
+              <p>Ingresos</p>
+            </a>
+          </li>
+          <li class="nav-item {% if 'ui-tables' in segment %} active {% endif %}">
+            <a class="nav-link" href="/ui-tables.html">
+              <i class="material-icons">content_paste</i>
+              <p>Gastos</p>
+            </a>
+          </li>
+          
           <li class="nav-item {% if 'ui-tables' in segment %} active {% endif %}">
             <a class="nav-link" href="/ui-tables.html">
               <i class="material-icons">content_paste</i>

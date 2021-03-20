@@ -44,12 +44,14 @@ DEFAULT_APPS = [
 ]
 
 THIRD_PARTY_APPS = [
+    'import_export',
     'bootstrap4',
 ]
 
 LOCAL_APPS = [
     'app',
     'authentication',
+    'transacciones',
 ]
 
 INSTALLED_APPS = DEFAULT_APPS+THIRD_PARTY_APPS+LOCAL_APPS
