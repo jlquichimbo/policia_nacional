@@ -21,14 +21,14 @@
               <p>Mi Perfil</p>
             </a>
           </li>
-          <li class="nav-item {% if 'ui-tables' in segment %} active {% endif %}">
+          <li class="nav-item {% if 'Ingreso' in title %} active {% endif %}">
             <a class="nav-link" href="{% url 'transacciones:ingreso_list' %}">
               <i class="material-icons">content_paste</i>
               <p>Ingresos</p>
             </a>
           </li>
-          <li class="nav-item {% if 'ui-tables' in segment %} active {% endif %}">
-            <a class="nav-link" href="/ui-tables.html">
+          <li class="nav-item {% if 'Gasto' in title %} active {% endif %}">
+            <a class="nav-link" href="{% url 'transacciones:gasto_list' %}">
               <i class="material-icons">content_paste</i>
               <p>Gastos</p>
             </a>
@@ -79,14 +79,14 @@
             </a>
           </li>
 
-          <li class="nav-item active-pro ">
+          <!-- <li class="nav-item active-pro ">
             <a target="_blank" rel="noopener noreferrer"  
                class="nav-link" 
                href="https://www.creative-tim.com/product/material-dashboard-django">
               <i class="material-icons">unarchive</i>
               <p>See product</p>
             </a>
-          </li>
+          </li> -->
         </ul>
       </div>
       {% endif %}

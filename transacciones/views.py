@@ -32,12 +32,41 @@ class IngresoCreateView(CreateView):
         context = super(IngresoCreateView, self).get_context_data(**kwargs)
         context.update({'title': 'Ingreso'})
         return context
-    
-
 
 def ingreso_list(request):
     ingresos = Transaccion.objects.filter(tipo = 'i')
     context = {
         'transacciones': ingresos,
+        'title': 'Ingreso',
+        'form_create': 'transacciones:ingreso_form',
+    }
+    return render(request, 'transacciones/transacciones_list.html', context)    
+
+
+class GastoCreateView(CreateView):
+    model = Transaccion
+    form_class = GastoForm
+    # template_name = "TEMPLATE_NAME"
+    success_url = reverse_lazy('transacciones:gasto_list')
+
+    def form_valid(self, form):
+        transaccion = form.save()
+        transaccion.tipo = 'g'
+        transaccion.save()
+        return super(GastoCreateView, self).form_valid(form)
+    
+    
+    def get_context_data(self, **kwargs):
+        context = super(GastoCreateView, self).get_context_data(**kwargs)
+        context.update({'title': 'Gasto'})
+        return context
+
+
+def gasto_list(request):
+    gastos = Transaccion.objects.filter(tipo = 'g')
+    context = {
+        'transacciones': gastos,
+        'title': 'Gasto',
+        'form_create': 'transacciones:gasto_form',
     }
     return render(request, 'transacciones/transacciones_list.html', context)
