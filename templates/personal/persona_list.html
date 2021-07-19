@@ -1,0 +1,65 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} Personal {% endblock %} 
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="col-md-6">
+                    <a href="{% url 'personal:persona_create' %}" class="button btn btn-success">Nuevo empleado</a>
+                </div>
+              <div class="card">
+                <div class="card-header card-header-primary">
+                  <h4 class="card-title ">Personal</h4>
+                  <p class="card-category"> Empleados registrados</p>
+                </div>
+                <div class="card-body">
+                  <div class="table-responsive">
+                    <table class="table">
+                      <thead class=" text-primary">
+                        <th>Identificación</th>
+                        <th>Nombres</th>
+                        <th>Apellidos</th>
+                        <th>Fecha Nac.</th>
+                        <th>Tipo Sangre</th>
+                        <th>Ciudad</th>
+                        <th>Teléfono</th>
+                        <th>Rango</th>
+                        <th>Dependencia</th>
+                        <th>Acciones</th>
+                      </thead>
+                      <tbody>
+                          
+                          {% for persona in personal %}
+                            <tr>
+                              <td>{{ persona.identificacion }}</td>
+                              <td>{{ persona.nombres }}</td>
+                              <td>{{ persona.apellidos }}</td>
+                              <td>{{ persona.fecha_nacimiento }}</td>
+                              <td>{{ persona.tipo_sangre }}</td>
+                              <td>{{ persona.ciudad_nacimiento }}</td>
+                              <td>{{ persona.telefono_celular }}</td>
+                              <td>{{ persona.rango_grado }}</td>
+                              <td>{{ persona.dependencia }}</td>
+                              <td>
+                                
+                              </td>
+                            </tr>
+                          {% endfor %}
+                              
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}{% endblock javascripts %}

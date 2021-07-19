@@ -1,1 +1,1 @@
-web: gunicorn fintem.wsgi
+web: gunicorn policia_nacional.wsgi
