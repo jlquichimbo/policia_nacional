@@ -43,10 +43,12 @@
                               <td>{{ persona.tipo_sangre }}</td>
                               <td>{{ persona.ciudad_nacimiento }}</td>
                               <td>{{ persona.telefono_celular }}</td>
-                              <td>{{ persona.rango_grado }}</td>
+                              <td>{{ persona.get_rango_grado_display }}</td>
                               <td>{{ persona.dependencia }}</td>
                               <td>
-                                
+                                <a href="{% url 'personal:persona_detail' persona.pk %}"><i class="material-icons">visibility</i></a>
+                                <a href="{% url 'personal:persona_edit' persona.pk %}"><i class="material-icons">edit</i></a>
+                                <a href="{% url 'personal:persona_delete' persona.pk %}"><i class="material-icons">delete</i></a>
                               </td>
                             </tr>
                           {% endfor %}

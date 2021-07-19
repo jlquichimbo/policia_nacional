@@ -1,7 +1,7 @@
 {% extends "layouts/base.html" %}
 {% load bootstrap4 %}
 
-{% block title %} {{ title }} {% endblock %} 
+{% block title %} Eliminar {% endblock %} 
 
 <!-- Specific Page CSS goes HERE  -->
 {% block stylesheets %}{% endblock stylesheets %}
@@ -12,26 +12,22 @@
       <div class="card">
         <div class="card-header card-header-primary">
           <h4 class="card-title">
-            Nuevo Empleado
+            Eliminar Empleado
           </h4>
         </div>
         <div class="card-body">
 
           <h6 class="card-category">
-              {% if msg %}
-                <span class="text-danger">{{ msg | safe }}</span>
-              {% else %}
-                  Ingresa los datos del empleado
-              {% endif %}  
+             Está seguro que desea eliminar al {{ persona.get_rango_grado_display }} {{ persona.nombres }} {{ persona.apellidos }}
           </h6>
           
           <br />
 
           <form role="form" method="post" action="">
             {% csrf_token %} 
-            {% bootstrap_form form layout='inline' %}
+            
 
-            <button type="submit" name="login" class="btn btn-primary pull-left">Guardar</button>
+            <button type="submit" name="login" class="btn btn-danger pull-left">Eliminar</button>
 
 
             <div class="clearfix"></div>

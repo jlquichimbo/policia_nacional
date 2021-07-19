@@ -1,0 +1,55 @@
+{% extends "layouts/base.html" %}
+{% load bootstrap4 %}
+
+{% block title %} Ver Empleado {% endblock %} 
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header card-header-primary">
+          <h4 class="card-title">
+            Ver Empleado
+          </h4>
+        </div>
+        <div class="card-body">
+
+          <h6 class="card-category">
+            <dt>Identificacion:</dt>
+            <dd>{{ persona.identificacion }}</dd>
+
+            <dt>Nombres y Apellidos:</dt>
+            <dd>{{ persona.nombres }} {{ persona.apellidos }}</dd>
+
+            <dt>Fecha de Nacimiento:</dt>
+            <dd>{{ persona.fecha_nacimiento }}</dd>
+
+            <dt>Tipo de Sangre:</dt>
+            <dd>{{ persona.get_tipo_sangre_display }}</dd>
+
+            <dt>Ciudad de Nacimiento:</dt>
+            <dd>{{ persona.ciudad_nacimiento }}</dd>
+            
+            <dt>Teléfono o celular:</dt>
+            <dd>{{ persona.telefono_celular }}</dd>
+
+            <dt>Rango o Grado:</dt>
+            <dd>{{ persona.get_rango_grado_display }}</dd>
+
+            <dt>Dependencia:</dt>
+            <dd>{{ persona.dependencia }}</dd>
+          </h6>
+          
+          <br />
+        </div>
+    </div>
+    <a href="{% url 'personal:persona_list' %}" class="btn btn-success">Volver</a>
+    </div>
+  </div>
+
+{% endblock content %}
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}{% endblock javascripts %}
